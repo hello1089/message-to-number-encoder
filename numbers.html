@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Conversion</title>
+</head>
+<body>
+    <h1>Input Conversion</h1>
+    
+    <form>
+        <label for="input">Enter your text:</label>
+        <input type="text" id="input" name="input">
+        <button type="button" onclick="convertToCode()">Convert to Code</button>
+    </form>
+    
+    <div id="output"></div>
+    
+    <script>
+        function convertToCode() {
+            var input = document.getElementById("input").value;
+            var output = "";
+            
+            for (var i = 0; i < input.length; i++) {
+                output += input.charCodeAt(i) + " ";
+            }
+            
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Conversion</title>
+</head>
+<body>
+    <h1>Code Conversion</h1>
+    
+    <form>
+        <label for="code">Enter the code:</label>
+        <input type="text" id="code" name="code">
+        <button type="button" onclick="convertToText()">Convert to Text</button>
+    </form>
+    
+    <div id="output"></div>
+    
+    <script>
+        function convertToText() {
+            var code = document.getElementById("code").value;
+            var output = "";
+            
+            var codes = code.split(" ");
+            
+            for (var i = 0; i < codes.length; i++) {
+                output += String.fromCharCode(codes[i]);
+            }
+            
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+</html>
